@@ -1,5 +1,5 @@
 # 💻 Atividades de Desenvolvimento Web
-Este repositório foi criado para armazenar todas as minhas atividades e projetos de HTML e CSS realizados *em aula*.
+Este repositório foi criado para armazenar todas as minhas atividades e projetos de HTML, CSS e JS realizados *em aula e em casa de forma autodidata*.
 
 ## 🚀 O que estou aprendendo:
   - *HTML5 Semântico:* Uso correto de tags.
