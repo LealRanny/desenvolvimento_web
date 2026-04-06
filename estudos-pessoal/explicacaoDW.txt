@@ -1,0 +1,146 @@
+			EXPLICAÇÃO DE TERMOS E DE CONTEÚDOS DE DESENVOLVIMENTO WEB
+
+
+		H   T  M  L:
+	-> Estrutura de html:
+html
+	head
+
+	head
+
+_______Aqui que eu posso começar a mexer no esqueleto do site_______
+	body
+		header
+
+		header
+		main
+			section
+				<div></div>
+			   ->posso criar quantas seções eu quiser para dividir as partes e classes. Um section pode ficar embaixo de outro.
+			section
+		main
+		footer
+
+		footer
+	body
+html
+
+
+-Div: é um container, usa-se para envolver partes do código que devem ser tratadas como um bloco único. Facilita a aplicação de css.
+	DIV E SECTION:
+"Esse bloco de conteúdo precisa de um título?"
+   ->Section(normalmente tem título): quando o conteúdo de dentro é de um conteúdo específico do site(ex: galeria de foto, sobre a empresa...). Section é para estrutura
+   ->Div(normalmente fica dentro de section): serve para organizar layout(ex: envolver um ícone e um texto para ficarem lado a lado. Div é para estética(CSS) 
+
+Você sabe que o esqueleto HTML está "pronto" quando você consegue ler o arquivo do topo ao fundo e encontrar todos os dados e informações que o exercício pediu, mesmo que a aparência esteja horrível.
+   *HTML: Levantar as paredes, colocar os canos, a fiação e as portas. (A estrutura está lá).
+   *CSS: Pintar, colocar o piso, escolher os móveis e a iluminação. (A estética).
+
+	MEU CHECKLIST PRA PARTIR PRO CSS:
+1. O conteúdo está todo lá? No meu exemplo, o exercício pediu 3 cartões com imagem, título, texto e botão. Você já colocou os três? Sim.
+2. A hierarquia faz sentido? Se você desligasse todo o estilo do mundo, uma pessoa ainda conseguiria entender a ordem das informações? (Ex: O título <h3> vem antes do parágrafo <p>). No seu código, sim.
+3. Eu dei "nomes" aos bois (Classes)? Para o CSS saber quem ele deve pintar de azul ou centralizar, você precisa de classes. Como eu já criei a <section class="cartoes"> e a <div class="card">, já dei os endereços para o CSS trabalhar.
+
+-> Links que "não levam a lugar algum", usamos o sinal de hashtag # no atributo href. Fica assim:
+<ul>
+            <li><a href="#">Início</a></li>
+</ul>
+
+Para colocar o símbolo do copyright:
+<p>&copy;</p>    -> esse &copy é o responsável pelo símbolo
+
+	FLEXBOX:
+-> Repara se as informações de cabeçalho estão uma em cada canto ou em partes diferentes, se estiver, é flexbox.(Não só no cabeçalho!)
+Repare que na imagem dela, o nome "FlexSite" está de um lado e os links estão do outro.
+Para conseguir esse efeito, o seu HTML precisa ter o <h1> e o <nav> como "irmãos" dentro do pai <header>.
+
+	PARA BARRAS LATERAIS:
+Onde vai esse Flexbox?
+   O Flexbox que controla essa divisão lateral não vai no main, mas sim em um contêiner que abraça tanto a barra lateral quanto o conteúdo. Geralmente, fazemos isso logo abaixo do header.
+
+Aqui está a lógica da estrutura:
+	1. O "Pai de todos" (Contêiner): Uma <div> ou o próprio <body>.
+	2. Filho 1 (Sidebar): Uma tag <aside> para o menu lateral.
+	3. Filho 2 (Conteúdo): A sua tag <main> com os cartões.
+Ao colocar display: flex(no CSS) nesse "Pai", o menu lateral e o main ficarão um ao lado do outro.
+
+MENUS DE NAVEGAÇAÕ:
+   Devem ser independentes!!
+Header: o que fica no topo
+Aside: lateral
+
+<div class="menu-icon">&#9776;</div>   -> ≡
+
+
+		C   S   S:
+Ás vezes a página pode não estar mudando por causa disso:
+   -> Mesma Pasta: O arquivo index.html e o style.css precisam estar "morando" na mesma pasta. Se o CSS estiver dentro de uma pasta chamada css, o caminho teria que ser href="css/style.css".
+   -> Nome do Arquivo: Verifique se o arquivo se chama exatamente style.css (sem o "s" no final, tudo minúsculo). Se no HTML estiver style.css e o arquivo for estilo.css, não funciona.
+
+body{
+    display: flex;
+    min-height: 100vh; /*eu acho que isso aqui faz o corpo ocupar a altura toda da tela */
+    flex-direction: row; /*coloca Sidebar e Main lado a lado */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*isso aqui vai ajudar a calcular tamanhos sem erros */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(227, 227, 228);
+}
+
+.conteudo-flexivel {
+    display: flex;         
+    flex-direction: row; 
+    min-height: 100vh; /*o recheio do site ocupa a tela toda */
+}
+
+body{
+    display: flex;
+    min-height: 100vh; /*eu acho que isso aqui faz o corpo ocupar a altura toda da tela */
+    flex-direction: row; /*coloca Sidebar e Main lado a lado */
+}
+
+.sidebar{
+    background-color: rgb(37, 37, 75);
+    color: white; /*aqui é cor da letra*/
+    width: 200px; /*largura fixa da barra*/
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /*icone em cima, links embaixo*/
+    gap: 20px;
+}
+
+.sidebar a{
+    color: white;
+    text-decoration: none;
+}
+
+.main {
+    flex: 1; /*oupa todo o espaço restante */
+    padding: 40px;
+}
+
+.cartoes {
+    display: flex;
+    flex-wrap: wrap; /*aqui eu acho que funciona tipo um "ai não coube, passa p baixo"*/
+    justify-content: center; 
+    gap: 30px;  /*espaço entre os cartões */
+    margin-top: 30px;
+}
+
+.cartao {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /*sombra*/
+    width: 280px;
+    text-align: center;  /*p centralizar texto e botão */
+}
+	
+		J   A   V   A      S   C   R   I   P   T:
