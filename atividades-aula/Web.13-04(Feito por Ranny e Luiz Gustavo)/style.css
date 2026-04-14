@@ -1,0 +1,112 @@
+[class^="col-"] { /*seletor de atribuito*/  
+  grid-column: span 12; /* tudo ocupa a tela inteira */
+}
+
+/* desktop */
+@media (min-width: 728px) {
+  .col-1  { grid-column: span 1; }
+  .col-2  { grid-column: span 2; }
+  .col-3  { grid-column: span 3; }
+  .col-4  { grid-column: span 4; }
+  .col-5  { grid-column: span 5; }
+  .col-6  { grid-column: span 6; }
+  .col-7  { grid-column: span 7; }
+  .col-8  { grid-column: span 8; }
+  .col-9  { grid-column: span 9; }
+  .col-10 { grid-column: span 10; }
+  .col-11 { grid-column: span 11; }
+  .col-12 { grid-column: span 12; }
+}
+
+body{
+ background-image: url("./img/terra.jpg");
+}
+
+
+header {
+    grid-row-start: 1;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #243b1d, #255f2d);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header p {
+    font-size: 3rem;
+}
+
+img {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    width: 90%;
+    height:max-content;
+    object-fit: cover; /* ocupa todo o espaço */
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-self: center;
+}
+
+main div {
+    background-color: #ffffff;
+    padding: 1rem;
+    font-size: 1rem;
+    color: gray;
+    border-radius: 1rem;
+    margin: 20px;
+}
+
+.container {
+  display: flex; 
+  gap: 20px;     
+  flex-wrap: wrap; 
+}
+
+.col-4 {
+  flex: 1;      
+  min-width: 200px; 
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 90%;
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.h0{
+  color: rgb(78, 78, 78);
+}
+.h2a{
+  color: #318318;
+}
+.h2b{
+  color: #d41212;
+}
+.h2c{
+  color: #070807;
+}
+
